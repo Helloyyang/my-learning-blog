@@ -68,13 +68,7 @@ function Calendar() {
   const firstDay = new Date(year, month, 1).getDay()
   const daysInMonth = new Date(year, month + 1, 0).getDate()
 
-  const days = []
-  for (let i = 0; i < firstDay; i++) {
-    days.push(null)
-  }
-  for (let i = 1; i <= daysInMonth; i++) {
-    days.push(i)
-  }
+
 
   const weekDay = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'][currentDate.getDay()]
 
@@ -118,20 +112,7 @@ function Calendar() {
             {day}
           </div>
         ))}
-        {days.map((day, index) => (
-          <div
-            key={index}
-            className={`flex h-7 w-7 cursor-pointer items-center justify-center rounded-full text-xs ${
-              day === today && month === currentDate.getMonth()
-                ? 'bg-green-500 font-bold text-white'
-                : day
-                  ? 'text-gray-600 hover:bg-green-100 dark:text-gray-300 dark:hover:bg-green-900'
-                  : ''
-            }`}
-          >
-            {day}
-          </div>
-        ))}
+        
       </div>
     </div>
   )
